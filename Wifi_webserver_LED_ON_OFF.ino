@@ -50,8 +50,9 @@ void loop() {
 
   // Wait until the client sends some data
   Serial.println("new client");
-  while(!client.available()){
-    delay(1);
+    //當內容>100byte才往下走
+  while(!client.available() < 100){
+    delay(10);
   }
 
   // Read the first line of the request
